@@ -1,0 +1,277 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+	\usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Qianli Wang}
+%\tagline{Your Position or Tagline Here}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{identity}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{wolfgang61617@gmail.com}
+  \phone{+49 015237773079}
+  \mailaddress{Dauerwaldweg 1, 14055, Berlin, Germany}
+  %\location{Location, COUNTRY}
+  %\homepage{www.homepage.com}
+  %\twitter{@qiaw99}
+  %\linkedin{your_id}
+  \github{qiaw99}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+%\cvsection{Experience}
+
+%\cvevent{Job Title 1}{Company 1}{Month 20XX -- Ongoing}{Location}
+%\begin{itemize}
+%\item Job description 1
+%\item Job description 2
+%\end{itemize}
+
+%\divider
+
+%\cvevent{Job Title 2}{Company 2}{Month 20XX -- Ongoing}{Location}
+%\begin{itemize}
+%\item Job description 1
+%\item Job description 2
+%\end{itemize}
+
+\cvsection{Projects}
+\cvevent{Bridge}{Implemented in Java}{https://github.com/qiaw99/bridge}{}
+\begin{itemize}
+    \item Simulation of the game "Bridge".
+\end{itemize}
+
+\divider
+
+\cvevent{Roguelike}{Implemented ih Rust}{}{https://github.com/qiaw99/rust\_roguelike}
+\begin{itemize}
+\item 
+A subgenre of role-playing video games characterized by a dungeon crawl through procedurally generated levels, turn-based gameplay, tile-based graphics, and permanent death of the player character.
+\end{itemize}
+
+\divider
+
+\cvevent{Simple Database}{Implemented in C}{https://github.com/qiaw99/Database}{}
+\begin{itemize}
+    \item Simple Database which supports operations like INSERT, SELECT etc.
+\end{itemize}
+
+\divider
+
+\cvevent{Login\_System}{Implemented in Java}{https://github.com/qiaw99/Self-Learning/tree/master/Java/$Login\_System$}{}
+\begin{itemize}
+    \item A simple system for Login and for booking air tickets.
+\end{itemize}
+
+\divider
+
+\medskip
+
+\cvsection{Skills}
+\cvtag{UML}
+\cvtag{OCL}\\
+\cvtag{Git}
+\cvtag{XML}
+\cvtag{JSON}\\
+\cvtag{Microsoft Office}
+\cvtag{Libre Office}\\
+\cvtag{Object oriented programming}
+\cvtag{Unit test}\\
+\cvtag{LaTeX}
+\cvtag{pdfLaTeX}
+\cvtag{LuaLateX}
+\cvtag{BibTeX}
+\cvtag{MarkDown}\\
+
+
+
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+%\newpage
+
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{My Life Philosophy}
+
+\begin{quote}
+``Something smart or heartfelt, preferably in one sentence.''
+\end{quote}
+
+\cvsection{Programming Languages}
+\cvtag{C}
+\cvtag{Rust}
+\cvtag{asm}
+
+\divider
+
+\cvtag{Java}
+\cvtag{Python}
+\cvtag{Lua}
+
+\divider
+
+\cvtag{Haskell}
+
+\divider
+
+\cvtag{Javascript}
+\cvtag{HTML}
+\cvtag{CSS}
+
+\divider
+
+\cvtag{PostgreSQL}
+%\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
+
+%\divider
+
+%\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+
+%\divider
+
+%\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+
+\cvsection{Strengths}
+
+\cvtag{Hard-working}
+\cvtag{Eye for detail}\\
+\cvtag{Highly motivated}
+
+\cvsection{Languages}
+
+\cvskill{English}{4}
+\divider
+
+\cvskill{Chinese}{5}
+\divider
+
+\cvskill{German}{4}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vpsace etc to make ajustments.
+\medskip
+
+\cvsection{Education}
+\cvevent{Studienkolleg}{Niedersächsisches Studienkollge}{Oct.2017 -- July.2018}{}
+\divider
+\cvevent{B.Sc.\ Computer Science}{Freie Universität Berlin}{Oct. 2018 -- Now}{}
+
+
+
+\cvsection{Score}
+1,7 out of 6,0 (In germany grade system: 1,0 is the best and 6,0 is the worst)
+% \cvref{name}{email}{mailing address}
+
+
+
+\end{paracol}
+
+
+\end{document}
